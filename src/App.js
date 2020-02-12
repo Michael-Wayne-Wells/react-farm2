@@ -4,16 +4,18 @@ import ScheduleList from './components/ScheduleList';
 import Navbar from './components/Navbar';
 import ProduceList from './components/ProduceList';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
+function App(){
   return (
-    <div className="App">
-    <Navbar/>
-      <header>
+    <div className='App'>
       <Header/>
-      </header>
-      <ScheduleList/>
-      <ProduceList/>
+      <Switch>
+        <Route exact path='/' component={ProduceList} />
+        <Route path='/schedulelist' component={ScheduleList} />
+      </Switch>
+      <Navbar/>
+
     </div>
   );
 }
